@@ -1,0 +1,28 @@
+syntax = "proto3";
+package feedback_service;
+
+option go_package = "github.com/wintermonth2298/feedback-service/api/feedback-service;feedback_service";
+
+message CreateFeedbackRequest {
+    int64 id = 1;
+    int64 rate = 2;
+    string text = 3;
+}
+
+message CreateFeedbackResponse {}
+
+message GetFeedbackRequest {
+    int64 id = 1;
+}
+
+message GetFeedbackResponse {
+    int64 id = 1;
+    int64 rate = 2;
+    string text = 3;
+}
+
+service FeedbackService {
+    rpc CreateFeedback(CreateFeedbackRequest) returns (CreateFeedbackResponse) {}
+    rpc GetFeedback(GetFeedbackRequest) returns (GetFeedbackResponse) {}
+}
+

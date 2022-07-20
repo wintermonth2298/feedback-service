@@ -1,0 +1,8 @@
+{
+    "server_port": "9000",
+    "sql": {
+        "host": "localhost",
+        "port": "5432",
+        "database": "feedback_service"
+    }
+}
