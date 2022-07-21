@@ -4,14 +4,14 @@ protogen:
 		./api/feedback-service/feedback-service.proto
 
 goose_up:
-	goose -dir migrations postgres "user=winte password=123 dbname=xployalty_test sslmode=disable" up
+	goose -dir migrations postgres "dbname=feedback_service sslmode=disable" up
 
 goose_down:
-	goose -dir migrations postgres "user=winte password=123 dbname=xployalty_test sslmode=disable" down
+	goose -dir migrations postgres "dbname=feedback_service sslmode=disable" down
 
 goose_redo:
-	goose -dir migrations postgres "user=winte password=123 dbname=xployalty_test sslmode=disable" redo
+	goose -dir migrations postgres "user=winte password=123 dbname=feedback_service sslmode=disable" redo
 
 goose_status:
-	goose -dir migrations postgres "user=winte password=123 dbname=xployalty_test sslmode=disable" status
+	goose -dir migrations postgres "user=winte password=123 dbname=feedback_service sslmode=disable" status
 

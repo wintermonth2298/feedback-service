@@ -1,8 +1,10 @@
 {
     "server_port": "9000",
     "sql": {
-        "host": "localhost",
+        "host": "postgres",
         "port": "5432",
-        "database": "feedback_service"
+        "database": "test",
+        "username": "postgres",
+        "password": "postgres"
     }
 }

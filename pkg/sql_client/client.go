@@ -11,7 +11,8 @@ import (
 )
 
 func New(ctx context.Context, cfg config.SQL) (*sqlx.DB, error) {
-	dsn := fmt.Sprintf("postgresql://user:password@%s:%s/%s", cfg.Host, cfg.Port, cfg.Database)
+	dsn := fmt.Sprintf("postgresql://%s:%s@%s:%s/%s",
+		cfg.Username, cfg.Password, cfg.Host, cfg.Port, cfg.Database)
 
 	ctx, cancel := context.WithTimeout(ctx, 5*time.Second)
 	defer cancel()
@@ -21,5 +22,5 @@ func New(ctx context.Context, cfg config.SQL) (*sqlx.DB, error) {
 		return nil, err
 	}
 
-	return db, nil
+	return db, db.Ping()
 }
